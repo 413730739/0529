@@ -283,6 +283,12 @@ const changeMonth = (delta) => {
   calendarViewDate.value = new Date(calendarViewDate.value.getFullYear(), calendarViewDate.value.getMonth() + delta, 1)
 }
 
+const onCalendarDateClick = (date) => {
+  if (date) {
+    selectedDate.value = date
+  }
+}
+
 const hasEventsOnDate = (date) => {
   if (!date) return false
   return events.value.some(ev => isEventActiveOnDate(ev, date))
